@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="com.aurora.warden">
+        <permission name="android.permission.WAKE_LOCK" />
+        <permission name="android.permission.INTERNET" />
+        <permission name="android.permission.FOREGROUND_SERVICE" />
+        <permission name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <permission name="android.permission.GET_PACKAGE_SIZE" />
+        <permission name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    </privapp-permissions>
+</permissions>
