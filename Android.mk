@@ -1,5 +1,5 @@
 #
-# AuroraStore as privileged app as part of a build
+# AuroraStore and AuroraDroid Appwarden as privileged app as part of a build
 #
 # Prebuilt content taken from https://gitlab.com/AuroraOSS/AuroraStore/tags
 #
@@ -33,3 +33,31 @@ LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
 LOCAL_CERTIFICATE := PRESIGNED
 include $(BUILD_PREBUILT)
 
+include $(CLEAR_VARS)
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE := AuroraDroid
+LOCAL_SRC_FILES := AuroraDroid_v1.0.8.apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_PRIVILEGED_MODULE := true
+LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_CERTIFICATE := PRESIGNED
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := privapp-permissions-Warden.xml
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/permissions
+LOCAL_SRC_FILES := $(LOCAL_MODULE)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE := AppWarden
+LOCAL_SRC_FILES := AppWarden_v1.0.3.apk
+LOCAL_MODULE_CLASS := APPS
+LOCAL_PRIVILEGED_MODULE := true
+LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_REQUIRED_MODULES := privapp-permissions-Warden.xml
+include $(BUILD_PREBUILT)
