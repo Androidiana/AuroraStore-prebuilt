@@ -1,4 +1,4 @@
-# AuroraStore-prebuilt
+# aurorastore-prebuilt
 
 Prebuilt AuroraStore - taken from https://gitlab.com/AuroraOSS/AuroraStore/tags
 
